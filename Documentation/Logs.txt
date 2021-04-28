@@ -1,0 +1,17 @@
+#####This is before we had a github setup to keep track of code contribution####
+
+
+March, 4th
+Brainstormed ideas for project and made the design
+March, 8th
+Tiger finished the first draft of the final report
+April, 9th
+Kerr started on the data importer that would import the data from Numbeo API
+April, 12th
+Data importer first part of pulling the data was completed by Kerr
+Group decision made to add rent prices as a new entity alongside food prices
+April, 13th
+Tiger modified report to include rent prices
+April, 21st
+Second part of data importer which injected the data into the mysql database was completed by Kerr
+
