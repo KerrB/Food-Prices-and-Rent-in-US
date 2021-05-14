@@ -58,7 +58,6 @@ food_and_city = []
 city_rent_prices = []
 
 
-
 ##This is to get each city and get their food prices and rent price for one bedroom inner city
 for x in city_list:
 	if x["country"] == "United States": 
@@ -86,13 +85,10 @@ for x in city_list:
 					thisRentPrice = [rent_prices, current_city]			
 					city_rent_prices.append(thisRentPrice)
 					
-					
-		
-					
-				
-
-
-
+	
+	
+	
+	
  ###    ###   ##        ####   ###   ####   #####   ####  #####  #   #
 #      #   #  ##       ##     #   #  ##  #  ##     #      ##     ##  #
  ###   #   #  ##       ##     #   #  ##  #  ####   ####   ####   # # #
@@ -157,8 +153,111 @@ outF.write("	TOMATO varchar(20)," + '\n')
 outF.write("	WATER varchar(20)," + '\n')
 outF.write("	PRIMARY KEY (CITY_NAME)" + '\n')
 outF.write(");" + '\n')
-#TODO: Write the for loop to get all the variables
-#TODO: Write a case switch function to for the item type 
+
+
+
+#To future me, I'm sorry
+#The purpose of the for loop is to check if the previous city is the same as the current city. 
+#If they're not then that's when we write the whole line.
+#All values are default to NULL so in case they don't have the right value then they are inserted as null
+#The prices refer to one part of the dictionary that conatin the price and item name only
+
+Apples = "NULL"
+Banana = "NULL"
+Beef = "NULL"
+Wine = "NULL"
+Chicken = "NULL"
+Cigerattes = "NULL"
+Dom_Beer = "NULL"
+Eggs = "NULL"
+Imp_Beer = "NULL"
+Lettuce = "NULL"
+Bread = "NULL"
+Cheese = "NULL"
+Milk = "NULL"
+Onion = "NULL"
+Oranges = "NULL"
+Potato = "NULL"
+Rice = "NULL"
+Tomato = "NULL"
+Water = "NULL"	
+previousCityName = ""
+counter = 0
+for prices in food_and_city:
+	itemName = prices[0]["item_name"]
+	foodPrice = prices[0]["average_price"]
+	newCityName = prices[1]
+
+	counter += 1	
+
+	if previousCityName == "":
+		previousCityName = prices[1]
+	elif newCityName != previousCityName or counter == len(food_and_city):
+		if counter == len(food_and_city):
+			outF.write("INSERT INTO FOOD (CITY_NAME, APPLES, BANANA, BEEF_ROUND, WINE, CHICKEN_FILLET, CIGARETTES, DOMESTIC_BEER, EGGS, IMPORTED_BEER, LETTUCE, BREAD, CHEESE, MILK, ONION, ORANGES, POTATO, RICE, TOMATO, WATER) VALUES(\"" + prices[1] + "\", \"" + str(Apples) + "\", \"" + str(Banana) + "\", \"" + str(Beef) + "\", \"" + str(Wine) + "\", \"" +  str(Chicken) + "\", \"" + str(Cigerattes) + "\", \"" + str(Dom_Beer) + "\", \"" + str(Eggs) + "\", \"" + str(Imp_Beer) + "\", \"" + str(Lettuce) + "\", \"" + str(Bread) + "\", \"" + str(Cheese) + "\", \"" + str(Milk) + "\", \"" + str(Onion) + "\", \"" + str(Oranges) + "\", \"" + str(Potato) + "\", \"" + str(Rice) + "\", \"" + str(Tomato) + "\", \"" + str(Water) + "\");\n")
+		else:
+			outF.write("INSERT INTO FOOD (CITY_NAME, APPLES, BANANA, BEEF_ROUND, WINE, CHICKEN_FILLET, CIGARETTES, DOMESTIC_BEER, EGGS, IMPORTED_BEER, LETTUCE, BREAD, CHEESE, MILK, ONION, ORANGES, POTATO, RICE, TOMATO, WATER) VALUES(\"" + previousCityName + "\", \"" + str(Apples) + "\", \"" + str(Banana) + "\", \"" + str(Beef) + "\", \"" + str(Wine) + "\", \"" +  str(Chicken) + "\", \"" + str(Cigerattes) + "\", \"" + str(Dom_Beer) + "\", \"" + str(Eggs) + "\", \"" + str(Imp_Beer) + "\", \"" + str(Lettuce) + "\", \"" + str(Bread) + "\", \"" + str(Cheese) + "\", \"" + str(Milk) + "\", \"" + str(Onion) + "\", \"" + str(Oranges) + "\", \"" + str(Potato) + "\", \"" + str(Rice) + "\", \"" + str(Tomato) + "\", \"" + str(Water) + "\");\n")
+		Apples = "NULL"
+		Banana = "NULL"
+		Beef = "NULL"
+		Wine = "NULL"
+		Chicken = "NULL"
+		Cigerattes = "NULL"
+		Dom_Beer = "NULL"
+		Eggs = "NULL"
+		Imp_Beer = "NULL"
+		Lettuce = "NULL"
+		Bread = "NULL"
+		Cheese = "NULL"
+		Milk = "NULL"
+		Onion = "NULL"
+		Oranges = "NULL"
+		Potato = "NULL"
+		Rice = "NULL"
+		Tomato = "NULL"
+		Water = "NULL"	
+		previousCityName = newCityName
+	else:
+		if "Apple" in itemName:
+			Apples = foodPrice
+		elif "Banana" in itemName:
+			Banana = foodPrice
+		elif "Beef" in itemName:
+			Beef = foodPrice
+		elif "Wine" in itemName:
+			Wine = foodPrice
+		elif "Chicken" in itemName:
+			Chicken = foodPrice
+		elif "Cigerattes" in itemName:
+			Cigarettes = foodPrice
+		elif "Domestic" in itemName:
+			Dom_Beer = foodPrice
+		elif "Eggs" in itemName:
+			Eggs = foodPrice
+		elif "Imported" in itemName:
+			Imp_Beer = foodPrice
+		elif "Lettuce" in itemName:
+			Lettuce = foodPrice
+		elif "Bread" in itemName:
+			Bread = foodPrice
+		elif "Cheese" in itemName:
+			Cheese = foodPrice
+		elif "Milk" in itemName:
+			Milk = foodPrice
+		elif "Onion" in itemName:
+			Onion = foodPrice
+		elif "Oranges" in itemName:
+			Oranges = foodPrice
+		elif "Potato" in itemName:
+			Potato = foodPrice
+		elif "Rice" in itemName:
+			Rice = foodPrice
+		elif "Tomato" in itemName:
+			Tomato = foodPrice
+		elif "Water" in itemName:
+			Water = foodPrice
+
+
 
 
 
