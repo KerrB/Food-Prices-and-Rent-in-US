@@ -12,12 +12,12 @@ if ($mysqli->connect_errno) {
 }
 
 
-$query = "SELECT * FROM CITY WHERE CITY.STATE = '" . $name . "'";
+$query = "SELECT AVG(APPLES) FROM CITY, FOOD WHERE CITY.STATE = '" . $name . "'";
 if ($result = $mysqli->query($query)) {
      /* fetch associative array */
      while ($row = $result->fetch_assoc()) {
-        echo $row["CITY_NAME"] . "<br>";
-    }
+        echo $row["AVG(APPLES)"] . "<br>";
+    }   
 
 
     /* free result set */
