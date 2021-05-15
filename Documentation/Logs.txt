@@ -16,4 +16,4 @@ April, 21st
 Second part of data importer which injected the data into the mysql database was completed by Kerr
 
 May 14
-All codes and final project reported was completed by Kerr
+All codes and final project report was completed by Kerr
