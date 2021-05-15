@@ -12,12 +12,12 @@ if ($mysqli->connect_errno) {
 }
 
 
-$query = "SELECT * FROM CITY WHERE CITY.STATE = '" . $name . "'";
+$query = "SELECT RENT FROM RENT WHERE CITY_NAME = '" . $name . "'";
 if ($result = $mysqli->query($query)) {
      /* fetch associative array */
      while ($row = $result->fetch_assoc()) {
-        echo $row["CITY_NAME"] . "<br>";
-    }
+        echo $row["RENT"] . "<br>";
+    }   
 
 
     /* free result set */

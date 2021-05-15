@@ -2,11 +2,38 @@
     <head>
     </head>
 <body>
-
+	<head> Find the cities in a state </head>
     <form action="connect.php" method="post">
+        State Name(Two letters): <input type="text" name="name"><br>
+        <input type="submit">
+    </form>
+   
+	<head> Find the apple prices in a city </head> 
+	<form action="fp_city.php" method="post">
         City Name: <input type="text" name="name"><br>
         <input type="submit">
     </form>
+ 	
+	<head> Find the rent prices in a city </head>
+	<form action="rp_city.php" method="post">
+        City Name: <input type="text" name="name"><br>
+        <input type="submit">
+    </form>
+ 
+	<head> Find the average food price of apple in a state</head>
+	<form action="avgFPstate.php" method="post">
+        State Name(Two letters): <input type="text" name="name"><br>
+        <input type="submit">
+    </form>
+ 	
+	<head> Find the average rent price in a state</head>
+	<form action="avgRPstate.php" method="post">
+        State Name(Two letters): <input type="text" name="name"><br>
+        <input type="submit">
+    </form>
+
+
+
 </body>
 </html>
 
